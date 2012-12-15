@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <style xmlns="http://purl.org/net/xbiblio/csl" class="in-text" version="1.0" demote-non-dropping-particle="sort-only" default-locale="en-GB">
   <info>
-    <title>Nature</title>
-    <id>http://www.zotero.org/styles/nature</id>
-    <link href="http://www.zotero.org/styles/nature" rel="self"/>
-    <link href="http://www.nature.com/nature/authors/gta/index.html#a5.4" rel="documentation"/>
+    <title>The Astrophysical Journal</title>
+    <id>http://www.zotero.org/styles/the-astrophysical-journal</id>
+    <link href="http://aas.org/journals/authors/common_instruct#references" rel="documentation"/>
+    <link href="http://www.zotero.org/styles/the-astrophysical-journal" rel="self"/>
+    <link href="http://www.zotero.org/styles/nature" rel="template"/>
     <author>
-      <name>Michael Berkowitz</name>
-      <email>mberkowi@gmu.edu</email>
+      <name>Chris Lowder</name>
+      <email>clowder@solar.physics.montana.edu</email>
     </author>
     <category citation-format="numeric"/>
     <category field="science"/>
-    <category field="generic-base"/>
-    <issn>0028-0836</issn>
-    <issn>1476-4687</issn>
-    <updated>2012-09-27T22:06:38+00:00</updated>
+    <issn>0004-637X</issn>
+    <eissn>1538-4357</eissn>
+    <updated>2012-12-12T13:57:00+00:00</updated>
     <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
   </info>
   <locale xml:lang="en">
@@ -58,7 +58,7 @@
   <macro name="issuance">
     <choose>
       <if type="bill book graphic legal_case legislation motion_picture report song chapter paper-conference" match="any">
-        <group delimiter=", " prefix="(" suffix=").">
+        <group delimiter=", " prefix="" suffix=",">
           <text variable="publisher" form="long"/>
           <date variable="issued">
             <date-part name="year"/>
@@ -66,7 +66,7 @@
         </group>
       </if>
       <else>
-        <date prefix="(" suffix=")." variable="issued">
+        <date prefix="" suffix="," variable="issued">
           <date-part name="year"/>
         </date>
       </else>
@@ -91,23 +91,18 @@
   </citation>
   <bibliography et-al-min="6" et-al-use-first="1" second-field-align="flush" entry-spacing="0">
     <layout>
-      <text variable="citation-number" suffix="."/>
       <group delimiter=" ">
         <text macro="author" suffix="."/>
-        <text macro="title" suffix="."/>
         <choose>
           <if type="chapter paper-conference" match="any">
             <text term="in" form="long" plural="false"/>
           </if>
         </choose>
-        <text variable="container-title" font-style="italic" form="short"/>
         <text macro="editor"/>
-        <group font-weight="bold">
-          <text variable="volume" suffix=","/>
-        </group>
-        <text variable="page"/>
         <text macro="issuance"/>
-        <text macro="access"/>
+        <text variable="container-title" font-style="italic" form="short" suffix=","/>
+        <text variable="volume" suffix=","/>
+        <text variable="page"/>
       </group>
     </layout>
   </bibliography>

@@ -28,7 +28,7 @@
     <category citation-format="author-date"/>
     <category field="generic-base"/>
     <summary>The Brazilian standard style</summary>
-    <updated>2012-09-27T22:06:38+00:00</updated>
+    <updated>2012-06-14T22:16:05+00:00</updated>
     <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
   </info>
   <locale xml:lang="pt-BR">
@@ -169,12 +169,24 @@
     </names>
   </macro>
   <macro name="access">
-    <text variable="URL" prefix="Disponível em: &lt;" suffix="&gt;"/>
-    <date variable="accessed" prefix=". Acesso em: ">
-      <date-part name="day" suffix=" "/>
-      <date-part name="month" form="short" suffix=" " text-case="lowercase"/>
-      <date-part name="year"/>
-    </date>
+    <choose>
+      <if type="article-magazine article-journal">
+        <text variable="URL" prefix=". Disponível em: &lt;" suffix="&gt;"/>
+        <date variable="accessed" prefix=". Acesso em: ">
+          <date-part name="day" suffix=" "/>
+          <date-part name="month" form="short" suffix=" " text-case="lowercase"/>
+          <date-part name="year"/>
+        </date>
+      </if>
+      <else>
+        <text variable="URL" prefix="Disponível em: &lt;" suffix="&gt;"/>
+        <date variable="accessed" prefix=". Acesso em: ">
+          <date-part name="day" suffix=" "/>
+          <date-part name="month" form="short" suffix=" " text-case="lowercase"/>
+          <date-part name="year"/>
+        </date>
+      </else>
+    </choose>
   </macro>
   <macro name="title">
     <choose>
